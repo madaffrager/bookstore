@@ -11,5 +11,5 @@ export class AppComponent {
  
  
  
-  title = 'frontend';
+  title = 'Anwar\'s BookStore';
 }
