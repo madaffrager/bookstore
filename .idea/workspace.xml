@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af30e2c6-879f-47d1-90c0-f754e1deafa2" name="Changes" comment="Update Cross-Origin" />
+    <list default="true" id="af30e2c6-879f-47d1-90c0-f754e1deafa2" name="Changes" comment="Update Cross-Origin">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/sidi/abdenour/bookstore/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/sidi/abdenour/bookstore/repository/BookRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,33 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/anwar/FPROJECT2/bookstore",
-    "spring.configuration.checksum": "4dfbcc19d331edae9baa7270eab14aa0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/anwar/FPROJECT2/bookstore&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4dfbcc19d331edae9baa7270eab14aa0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.BookstoreApplication (1)">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="bookstore" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="bookstore" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookstoreApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sidi.abdenour.bookstore.BookstoreApplication" />
@@ -86,6 +76,7 @@
       <updated>1657809889674</updated>
       <workItem from="1657809894553" duration="2928000" />
       <workItem from="1657834213434" duration="694000" />
+      <workItem from="1657903089569" duration="2176000" />
     </task>
     <task id="LOCAL-00001" summary="Update Cross-Origin">
       <created>1657819611607</created>

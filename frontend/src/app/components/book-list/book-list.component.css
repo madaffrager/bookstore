@@ -1,0 +1,7 @@
+container{
+    padding-left: 20px;
+}
+.list-group-horizontal>.list-group-item+.list-group-item{
+    border-top-width: 0;
+    border-left-width: 1px;
+}
