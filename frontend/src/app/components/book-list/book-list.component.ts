@@ -9,27 +9,66 @@ import { Book } from '../../common/book';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-books!:Book[];
-  categoryId!:number;
+books:Book[]=[];
+  categoryId:number=1;
+  searchMode:boolean=false;
+  searchword:string="";
+  //new properties for server side paging 
+  currentPage:number=1;
+  pageSize:number=6;
+  totalRecords:number=0;
+
   constructor(private bookService:BookService, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(()=>{
-      this.getBooks();
-    })
+      this.listBooks();
+    });
     
   }
-private getBooks(){
-  const hasCategory =this.activatedRoute.snapshot.paramMap.has('id');
-
-hasCategory?this.categoryId =  this.activatedRoute.snapshot.params['id']:this.categoryId=1;
-
  
-this.bookService.getBooks(this.categoryId).subscribe((data)=>{
-    this.books=data;
-  });
+ listBooks(){
+  this.searchMode=this.activatedRoute.snapshot.paramMap.has('keyword');
+  if(this.searchMode){
+    console.log("working");
+    this.handleSearchBooks();
+  }
+  else{
+    this.handleListBooks();
+  }
 }
 
 
+handleListBooks(){
+  const hasCategory =this.activatedRoute.snapshot.paramMap.has('id');
+
+  hasCategory?this.categoryId =  this.activatedRoute.snapshot.params['id']:this.categoryId=1;
+  
+   
+  this.bookService.getBooks(this.categoryId,this.currentPage-1,this.pageSize).subscribe(
+    this.processPaginate());
+}
+handleSearchBooks(){
+ this.searchword= this.activatedRoute.snapshot.params['keyword'];
+ this.bookService.searchBooks(this.searchword).subscribe(data=> {
+  this.books=data;
+ });
+}
+processPaginate(){
+  return (data: { _embedded: { books: Book[]; }; page: { number: number; totalElements: number; size: number; }; })=>{
+
+    this.books=data._embedded.books;
+    //page number starts from 1
+    this.currentPage=data.page.number+1;
+    this.totalRecords=data.page.totalElements;
+    this.pageSize=data.page.size
+  }
+}
+
+updatePageSize(event:Event){
+this.pageSize=Number((event.target as HTMLSelectElement).value);
+this.currentPage=1;
+ this.listBooks()
+}
 
 }

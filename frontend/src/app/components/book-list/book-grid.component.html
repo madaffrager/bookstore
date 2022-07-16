@@ -1,17 +1,5 @@
 
-<div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="list-group-horizontal">
-            <a routerLink="/category/1" class="list-group-item" routerLinkActive="bg-primary text-white font-weight-bold">Web Development</a>
-            <a routerLink="/category/2" class="list-group-item" routerLinkActive="bg-primary text-white font-weight-bold">Programming</a>
-            <a routerLink="/category/3" class="list-group-item" routerLinkActive="bg-primary text-white font-weight-bold">Databases</a>
-            <a routerLink="/category/4" class="list-group-item" routerLinkActive="bg-primary text-white font-weight-bold">Administration</a>
-
-  
-        </div>
-      </div>
-    </div> </div>
+<app-book-category></app-book-category>
   <section class="py-5">
   
   <div class="container px-4 px-lg-5 mt-5">
@@ -22,12 +10,12 @@
                   <!-- Sale badge-->
                   <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                   <!-- Product image-->
-                  <img class="card-img-top" [src]="book.imageUrl" alt="..." style="height: 60%;"/>
+                 <img class="card-img-top" [src]="book.imageUrl" alt="..." style="height: 60%;"/>
                   <!-- Product details-->
                   <div class="card-body p-4">
                       <div class="text-center">
                           <!-- Product name-->
-                          <h5 class="fw-bolder">{{book.name}}</h5>
+                         <a routerLink="/books/{{book.id}}"><h5 class="fw-bolder">{{book.name}}</h5></a> 
                           <span class="text-muted">{{book.description| slice:0:20}}...</span>
                           <!-- Product reviews-->
                           <div class="d-flex justify-content-center small text-warning mb-2">
@@ -44,12 +32,43 @@
                       </div>
                   </div>
                   <!-- Product actions-->
+
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                       <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                   </div>
               </div>
           </div>
-          
+          <div *ngIf="books?.length==0" class="col-md-12 alert alert-warning mt-2">No books found</div>
       </div>
+      
   </div>
 </section>
+
+<div class="row">
+<!--Pagination size-->
+<div class="col-md-6">
+<div class="row">
+    <div class="col-md-3"><span class="mr-2">Page Size:</span></div>
+<div class="col-md-9">
+    
+    <select (change)="updatePageSize($event)">
+    <option value="6" selected>6</option>
+    <option value="10" >10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+    </select>
+</div>
+</div>
+</div>
+    <!--Pagination selector-->
+<div class="col-md-6">
+    <ngb-pagination [(page)]="currentPage"
+  [pageSize]="pageSize"
+  [collectionSize]="totalRecords"
+  (pageChange)="listBooks()"
+  ></ngb-pagination>
+</div>
+
+</div>
+
+
