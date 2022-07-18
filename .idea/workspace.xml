@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af30e2c6-879f-47d1-90c0-f754e1deafa2" name="Changes" comment="Update Cross-Origin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/sidi/abdenour/bookstore/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/sidi/abdenour/bookstore/repository/BookRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +77,8 @@
       <workItem from="1657834213434" duration="694000" />
       <workItem from="1657903089569" duration="2176000" />
       <workItem from="1657917280237" duration="2801000" />
+      <workItem from="1657974189837" duration="324000" />
+      <workItem from="1658147605038" duration="1144000" />
     </task>
     <task id="LOCAL-00001" summary="Update Cross-Origin">
       <created>1657819611607</created>

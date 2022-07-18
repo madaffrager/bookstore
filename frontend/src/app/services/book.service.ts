@@ -26,9 +26,9 @@ getBookCategories():Observable<BookCategory[]>{
     map(Response=>Response._embedded.bookCategory)
   );
 }
-searchBooks(keyword:string):Observable<Book[]>{
-  const searcnhUrl=`${this.baseUrl}/search/searchbyname?name=${keyword}`;
-  return this.getBooksList(searcnhUrl);
+searchBooks(keyword:string, currentPage:number,pageSize:number):Observable<GetResponseBooks>{
+  const searcnhUrl=`${this.baseUrl}/search/searchbyname?name=${keyword}&page=${currentPage}&size=${pageSize}`;
+  return this.httpClient.get<GetResponseBooks>(searcnhUrl);
 }
  
 private getBooksList(searchUrl:string):Observable<Book[]>{
